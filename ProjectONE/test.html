@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на профориентацию</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul id="question-list">
+                <!-- Список вопросов будет генерироваться здесь -->
+            </ul>
+        </div>
+        <div class="content">
+            <div id="question-container" class="centered">
+                <!-- Вопросы будут отображаться здесь -->
+            </div>
+            <div id="answer-container" class="centered">
+                <!-- Варианты ответов будут отображаться здесь -->
+            </div>
+            <div id="result-container" class="centered" style="display: none;">
+                <!-- Результаты будут отображаться здесь -->
+                <ul id="result-list"></ul>
+                <canvas id="result-chart"></canvas>
+                <button id="retry-button" onclick="retryTest()">Перепройти тест</button>
+            </div>
+            <div id="navigation-buttons" class="navigation-buttons">
+                <button id="prev-button" onclick="prevQuestion()">Предыдущий вопрос</button>
+                <button id="next-button" onclick="nextQuestion()">Следующий вопрос</button>
+                <button id="result-button" onclick="calculateResults()" style="display: none;">Узнать результат</button>
+            </div>
+            <div class="top-right">
+                <button><a href="index.html">На главную</a></button>
+            </div>
+            <div id="message-container" class="centered" style="display: none;">
+                <p id="message-text"></p>
+                <button onclick="closeMessage()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
